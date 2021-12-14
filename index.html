@@ -7,12 +7,17 @@
     <style>
       svg > text {
         font-family: sans-serif;
+        font-size: xx-large;
       }
       div, input, button {
-        font: xx-large sans-serif;
+        font: 45px sans-serif;
       }
       input {
-        width: 20px;
+        width: 40px;
+        margin-right: 5px;
+      }
+      label, input {
+        display: block;
       }
     </style>
   </head>
@@ -21,25 +26,32 @@
       <div style="width: 500px; display: flex; flex-flow: column nowrap; align-items: center;">
         <div style="width: 500px;" >
           <div style="display: flex; flex-flow: row nowrap; align-items: center;">
-            <label>Center: <input id="tc" type="text" value="" maxlength="1" onkeyup="autotab(this,find('to1'))"/></label>
-            <label>Outside:
-              <input id="to1" type="text" value="" maxlength="1" onkeyup="autotab(this,find('to2'))"/>
-              <input id="to2" type="text" value="" maxlength="1" onkeyup="autotab(this,find('to3'))"/>
-              <input id="to3" type="text" value="" maxlength="1" onkeyup="autotab(this,find('to4'))"/>
-              <input id="to4" type="text" value="" maxlength="1" onkeyup="autotab(this,find('to5'))"/>
-              <input id="to5" type="text" value="" maxlength="1" onkeyup="autotab(this,find('to6'))"/>
-              <input id="to6" type="text" value="" maxlength="1" onkeyup="autotab(this,find('next'))"/>
-            </label>
+            <div>
+              <label for="tc" >Center: </label>
+              <input id="tc" type="text" value="" maxlength="1" onkeyup="autotab(this,find('to1'))"/>
+            </div>
+            <div style="padding-left: 50px;">
+              <label>Outside:</label>
+              <div style="display: flex; flex-flow: row nowrap">
+                <input id="to1" type="text" value="" maxlength="1" onkeyup="autotab(this,find('to2'))"/>
+                <input id="to2" type="text" value="" maxlength="1" onkeyup="autotab(this,find('to3'))"/>
+                <input id="to3" type="text" value="" maxlength="1" onkeyup="autotab(this,find('to4'))"/>
+                <input id="to4" type="text" value="" maxlength="1" onkeyup="autotab(this,find('to5'))"/>
+                <input id="to5" type="text" value="" maxlength="1" onkeyup="autotab(this,find('to6'))"/>
+                <input id="to6" type="text" value="" maxlength="1" onkeyup="autotab(this,find('next'))"/>
+              </div>
+            </div>
           </div>
-          <label for="upper">Uppercase
-            <input type="checkbox" id="upper" name="upper" checked>
+          <label for="upper" style="display: inline">
+            Uppercase
+            <input type="checkbox" id="upper" name="upper" checked style="display: inline; height: 30px; width: 30px;">
           </label>
         </div>
-        <div style="display: flex; flex-flow: row nowrap; justify-content: space-between; width: 100%;">
+        <div style="display: flex; flex-flow: row nowrap; justify-content: space-between; width: 100%; margin-bottom: 10px;">
           <button onclick="edit()">Edit</button>
           <div style="display: block; flex-grow: 1;"> </div>
           <button onclick="random(-1)">Prev</button>
-          <button id='next' onclick="random(1)">Next</button>
+          <button id='next' onclick="random(1)" style="margin-left: 5px;">Next</button>
         </div>
         <div>
           <svg viewBox="0 0 110 110" width="500px">
@@ -83,13 +95,13 @@
               fill="none"
               points="19.32,72 36.64,62"
             />
-            <text id="o1" x="36.64" y="25" dominant-baseline="middle" text-anchor="middle">?</text>
-            <text id="o2" x="71.28" y="25" dominant-baseline="middle" text-anchor="middle">?</text>
-            <text id="o3" x="19.32" y="55" dominant-baseline="middle" text-anchor="middle">?</text>
-            <text id="o4" x="88.60" y="55" dominant-baseline="middle" text-anchor="middle">?</text>
-            <text id="o5" x="36.64" y="85" dominant-baseline="middle" text-anchor="middle">?</text>
-            <text id="o6" x="71.28" y="85" dominant-baseline="middle" text-anchor="middle">?</text>
-            <text id="c"  x="53.96" y="55" dominant-baseline="middle" text-anchor="middle">?</text>
+            <text id="o1" x="36.64" y="26" dominant-baseline="middle" text-anchor="middle">?</text>
+            <text id="o2" x="71.28" y="26" dominant-baseline="middle" text-anchor="middle">?</text>
+            <text id="o3" x="19.32" y="56" dominant-baseline="middle" text-anchor="middle">?</text>
+            <text id="o4" x="88.60" y="56" dominant-baseline="middle" text-anchor="middle">?</text>
+            <text id="o5" x="36.64" y="86" dominant-baseline="middle" text-anchor="middle">?</text>
+            <text id="o6" x="71.28" y="86" dominant-baseline="middle" text-anchor="middle">?</text>
+            <text id="c"  x="53.96" y="56" dominant-baseline="middle" text-anchor="middle">?</text>
           </svg>
         </div>
       </div>
